@@ -1,0 +1,29 @@
+<svg width="520" height="520" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="91" y1="82" x2="431" y2="441" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF7A59"/>
+      <stop offset="0.45" stop-color="#FF4FA3"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="145" y1="145" x2="368" y2="371" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF7AD"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <filter id="shadow" x="24" y="36" width="472" height="458" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="520" height="520" rx="126" fill="#F9FAFB"/>
+  <g filter="url(#shadow)">
+    <path d="M260 438C229 414 189 383 156 350C102 296 76 247 89 191C100 141 139 105 189 105C222 105 246 120 260 143C274 120 298 105 331 105C381 105 420 141 431 191C444 247 418 296 364 350C331 383 291 414 260 438Z" fill="url(#g1)"/>
+    <path d="M260 386C236 366 207 343 183 318C142 276 122 239 131 199C139 166 165 143 199 143C229 143 249 160 260 187C271 160 291 143 321 143C355 143 381 166 389 199C398 239 378 276 337 318C313 343 284 366 260 386Z" fill="url(#g2)" opacity="0.98"/>
+    <path d="M176 263C197 250 221 243 247 243H273C299 243 323 250 344 263" stroke="#0F766E" stroke-width="18" stroke-linecap="round"/>
+    <path d="M197 286C214 306 236 316 260 316C284 316 306 306 323 286" stroke="#0F766E" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="209" cy="219" r="19" fill="#0F766E"/>
+    <circle cx="311" cy="219" r="19" fill="#0F766E"/>
+    <path d="M165 170C148 179 136 193 132 212" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.86"/>
+    <path d="M376 177C389 190 396 206 397 224" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <path d="M96 96L128 82L142 50L156 82L188 96L156 110L142 142L128 110L96 96Z" fill="#FACC15"/>
+  <path d="M374 424L397 414L407 391L417 414L440 424L417 434L407 457L397 434L374 424Z" fill="#2DD4BF"/>
+</svg>
