@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TE QUERO BEM | Carinho entregue em todas as cidades do Brasil</title>
+  <meta name="description" content="Vitrine nacional para encontrar lojistas locais e enviar presentes, flores, chocolates, cestas e mensagens para quem você quer bem." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <nav class="topbar">
+      <a href="#inicio" class="brand-mini">
+        <img src="assets/logo-te-quero-bem.svg" alt="Logo TE QUERO BEM" />
+        <span>TE QUERO BEM</span>
+      </a>
+      <div class="nav-links">
+        <a href="#prelancamento">Lançamento</a>
+        <a href="#orientador">Orientador</a>
+        <a href="#lojistas">Lojistas</a>
+        <a href="#planos">Planos</a>
+        <a href="lojista.html">Cadastro</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <img class="hero-logo" src="assets/logo-te-quero-bem.svg" alt="Logo TE QUERO BEM" />
+      <p class="eyebrow">Pré-lançamento para lojistas</p>
+      <h1>TE QUERO BEM</h1>
+      <p class="subtitle">Carinho entregue em todas as cidades do Brasil</p>
+      <div class="launch-pill">Cadastro de lojistas fundadores até 30/06 • Abertura ao público em 01/07/2026</div>
+      <p class="hero-text">Primeiro vamos formar a rede de lojas parceiras. Floriculturas, docerias, cestas, papelarias e presentes personalizados já podem entrar para aparecer na vitrine desde o lançamento.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="lojista.html">Cadastrar minha loja</a>
+        <a class="btn secondary" href="#prelancamento">Ver plano de lançamento</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="ticker-section">
+      <div class="ticker">
+        <span>Chamada para lojistas fundadores</span>
+        <span>Cadastro aberto até 30/06</span>
+        <span>Lançamento ao público em 01/07</span>
+        <span>Vitrine por cidade</span>
+        <span>Cliente chama direto no WhatsApp da loja</span>
+          <span>Mensalidade simples para lojistas</span>
+          <span>Cadastro autônomo com aprovação</span>
+      </div>
+    </section>
+
+    <section class="section launch-section" id="prelancamento">
+      <div class="section-head">
+        <p class="eyebrow dark">Agenda de lançamento</p>
+        <h2>Antes do público, precisamos montar a rede de lojistas</h2>
+        <p>A fase atual é para cadastrar lojas parceiras. No dia 01/07/2026, o site passa a divulgar a vitrine para clientes que querem enviar presentes.</p>
+      </div>
+      <div class="launch-grid">
+        <article class="launch-card glow-card">
+          <span>17/06</span>
+          <h3>Início da divulgação</h3>
+          <p>Convite para floriculturas, docerias, cestas, papelarias e lojas de presentes.</p>
+        </article>
+        <article class="launch-card glow-card">
+          <span>17 a 30/06</span>
+          <h3>Entrada de lojistas fundadores</h3>
+          <p>Primeiras lojas por cidade recebem prioridade visual na vitrine de lançamento.</p>
+        </article>
+        <article class="launch-card glow-card">
+          <span id="daysToLaunch">01/07</span>
+          <h3>Abertura ao público</h3>
+          <p>Clientes passam a usar a busca por cidade e chamar as lojas diretamente.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section color-band">
+      <div class="section-head">
+        <p class="eyebrow dark">Modelo simples e mais seguro</p>
+        <h2>Lojista assinante. Cliente livre. Venda direta.</h2>
+        <p>O site não recebe o dinheiro do presente. A plataforma vende visibilidade: o lojista paga mensalidade para aparecer e o cliente fala direto com a loja.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card glow-card">
+          <span>1</span>
+          <h3>Lojista se cadastra</h3>
+          <p>Envia cidade, categoria, WhatsApp, Instagram e tipo de produto.</p>
+        </article>
+        <article class="step-card glow-card">
+          <span>2</span>
+          <h3>Plano é confirmado</h3>
+          <p>Mensalidade ativa o card da loja na vitrine da cidade.</p>
+        </article>
+        <article class="step-card glow-card">
+          <span>3</span>
+          <h3>Vitrine fica pronta</h3>
+          <p>As primeiras lojas entram como parceiras fundadoras.</p>
+        </article>
+        <article class="step-card glow-card">
+          <span>4</span>
+          <h3>Público entra em 01/07</h3>
+          <p>Cliente escolhe a cidade e chama a loja diretamente pelo WhatsApp.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" id="enviar">
+      <div class="panel bright-panel">
+        <p class="eyebrow dark">Prévia para o cliente</p>
+        <h2>A busca por presentes abre ao público em 01/07</h2>
+        <p>Esta área mostra como o cliente vai encontrar lojas por cidade quando a rede de lojistas estiver formada.</p>
+        <form class="gift-form" id="giftForm">
+          <label>
+            Cidade de destino
+            <input id="cidadeDestino" type="text" placeholder="Ex: Beberibe" required />
+          </label>
+          <label>
+            Estado
+            <select id="estadoDestino" required>
+              <option value="">Escolha</option>
+              <option>CE</option><option>SP</option><option>RJ</option><option>MG</option><option>BA</option><option>PE</option><option>PB</option><option>RN</option><option>PI</option><option>MA</option><option>PA</option><option>GO</option><option>DF</option><option>PR</option><option>SC</option><option>RS</option>
+            </select>
+          </label>
+          <label>
+            Ocasião
+            <select id="ocasiaoDestino">
+              <option>Aniversário</option>
+              <option>Saudade</option>
+              <option>Amor</option>
+              <option>Pedido de desculpas</option>
+              <option>Melhoras</option>
+              <option>Agradecimento</option>
+              <option>Surpresa</option>
+            </select>
+          </label>
+          <label>
+            Tipo de presente
+            <select id="presenteDestino">
+              <option>Flores</option>
+              <option>Chocolate</option>
+              <option>Cesta especial</option>
+              <option>Cartão com mensagem</option>
+              <option>Bolo ou doces</option>
+              <option>Combo surpresa</option>
+            </select>
+          </label>
+          <button class="btn primary full" type="submit">Buscar lojistas</button>
+        </form>
+      </div>
+
+      <div class="panel store-panel">
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow dark">Modelo de vitrine</p>
+            <h2>Páginas de lojas parceiras</h2>
+          </div>
+          <button class="btn tiny" id="mostrarTodas" type="button">Mostrar todas</button>
+        </div>
+        <div class="store-list" id="storeList"></div>
+      </div>
+    </section>
+
+    <section class="section assistant-section" id="orientador">
+      <div class="section-head light">
+        <p class="eyebrow">Assistente inteligente</p>
+        <h2>Orientador Relacional</h2>
+        <p>Responda algumas perguntas e receba uma sugestão de presente coerente com a situação, o vínculo e o impacto desejado.</p>
+      </div>
+
+      <div class="assistant-card">
+        <div class="assistant-progress">
+          <span id="progressText">Pergunta 1 de 8</span>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+        <h3 id="questionTitle">Qual é a ocasião?</h3>
+        <div class="answers-grid" id="answersGrid"></div>
+        <div class="assistant-actions">
+          <button class="btn secondary" id="backQuestion" type="button">Voltar pergunta anterior</button>
+          <button class="btn ghost" id="restartAssistant" type="button">Reiniciar</button>
+        </div>
+        <div class="result-box" id="resultBox" hidden></div>
+      </div>
+    </section>
+
+    <section class="section categories">
+      <div class="section-head">
+        <p class="eyebrow dark">Categorias afetivas</p>
+        <h2>Presentes por sentimento</h2>
+      </div>
+      <div class="category-grid">
+        <article class="category-card glow-card love"><strong>Amor</strong><span>Flores, chocolate e mensagem romântica</span></article>
+        <article class="category-card glow-card longing"><strong>Saudade</strong><span>Cesta afetiva, carta e foto impressa</span></article>
+        <article class="category-card glow-card joy"><strong>Aniversário</strong><span>Bolo, doces, balões e surpresa</span></article>
+        <article class="category-card glow-card care"><strong>Melhoras</strong><span>Cesta leve, flores suaves e cuidado</span></article>
+        <article class="category-card glow-card thanks"><strong>Gratidão</strong><span>Cartão, lembrança e presente delicado</span></article>
+        <article class="category-card glow-card sorry"><strong>Desculpas</strong><span>Flores claras, carta sincera e chocolate</span></article>
+      </div>
+    </section>
+
+    <section class="section seller-section" id="lojistas">
+      <div class="seller-copy">
+        <p class="eyebrow">Para lojistas</p>
+        <h2>Entre como lojista fundador antes do lançamento público</h2>
+        <p>De 17/06 a 30/06, o foco é cadastrar lojas parceiras por cidade. Em 01/07, o TE QUERO BEM começa a ser divulgado para o público que quer enviar presentes.</p>
+        <div class="seller-benefits">
+          <span>Prioridade para primeiras lojas</span>
+          <span>Link direto para WhatsApp</span>
+          <span>Vitrine por cidade</span>
+          <span>Selo de destaque</span>
+          <span>Sem intermediar a venda</span>
+          <span>Mais visibilidade local</span>
+          <span>Mensalidade simples</span>
+        </div>
+      </div>
+
+      <form class="seller-form" id="sellerForm">
+        <h3>Quero ser lojista fundador</h3>
+        <label>Nome da loja<input id="lojaNome" type="text" placeholder="Ex: Floricultura Amor Local" required /></label>
+        <label>Cidade<input id="lojaCidade" type="text" placeholder="Ex: Beberibe" required /></label>
+        <label>Estado<select id="lojaEstado" required><option>CE</option><option>SP</option><option>RJ</option><option>MG</option><option>BA</option><option>PE</option><option>PB</option><option>RN</option><option>GO</option><option>PR</option></select></label>
+        <label>Categoria<select id="lojaCategoria"><option>Flores e presentes</option><option>Chocolates</option><option>Cestas especiais</option><option>Bolos e doces</option><option>Papelaria criativa</option><option>Artesanato</option></select></label>
+        <label>WhatsApp<input id="lojaWhats" type="tel" placeholder="Ex: 85999999999" required /></label>
+        <button class="btn primary full" type="submit">Simular cadastro</button>
+        <a class="btn secondary full" href="lojista.html">Abrir cadastro completo com imagens</a>
+        <a class="btn ghost full" href="https://wa.me/5585997120397?text=Ol%C3%A1%2C%20quero%20ser%20lojista%20fundador%20do%20TE%20QUERO%20BEM.%0ANome%20da%20loja%3A%0ACidade%3A%0AEstado%3A%0ATipo%20de%20produto%3A%0AInstagram%3A%0APlano%20desejado%3A" target="_blank" rel="noopener">Falar com Carlos no WhatsApp</a>
+        <p class="form-note">A loja entra como ativa após confirmação da mensalidade. A venda continua direta entre cliente e lojista.</p>
+      </form>
+    </section>
+
+    <section class="section plans" id="planos">
+      <div class="section-head">
+        <p class="eyebrow dark">Monetização segura</p>
+        <h2>Planos mensais para lojistas fundadores</h2>
+        <p>Oferta de entrada até 30/06. A mensalidade dá direito à presença na vitrine, página da loja, botão WhatsApp e divulgação orgânica conforme o plano.</p>
+      </div>
+      <div class="plans-grid">
+        <article class="plan-card glow-card">
+          <span class="badge">Entrada</span>
+          <h3>Básico</h3>
+          <strong>R$ 19,90</strong>
+          <small>primeiro mês fundador<br>depois R$ 29,90/mês</small>
+          <ul class="plan-benefits">
+            <li>Card simples na cidade</li>
+            <li>Página da loja com WhatsApp</li>
+            <li>1 foto principal</li>
+            <li>Até 3 produtos/serviços</li>
+          </ul>
+          <button class="btn secondary openPayment" data-plan="Básico fundador - R$ 19,90 no primeiro mês / depois R$ 29,90/mês">Ativar plano</button>
+        </article>
+        <article class="plan-card featured glow-card">
+          <span class="badge">Mais indicado</span>
+          <h3>Destaque</h3>
+          <strong>R$ 39,90</strong>
+          <small>primeiro mês fundador<br>depois R$ 49,90/mês</small>
+          <ul class="plan-benefits">
+            <li>Tudo do Básico</li>
+            <li>Card maior e colorido</li>
+            <li>Aparece acima do Básico</li>
+            <li>Até 6 fotos/produtos</li>
+            <li>1 divulgação mensal nas redes</li>
+          </ul>
+          <button class="btn primary openPayment" data-plan="Destaque fundador - R$ 39,90 no primeiro mês / depois R$ 49,90/mês">Ativar plano</button>
+        </article>
+        <article class="plan-card glow-card">
+          <span class="badge">Premium</span>
+          <h3>Regional</h3>
+          <strong>R$ 59,90</strong>
+          <small>primeiro mês fundador<br>depois R$ 69,90/mês</small>
+          <ul class="plan-benefits">
+            <li>Tudo do Destaque</li>
+            <li>Aparece em até 3 cidades próximas</li>
+            <li>Selo Parceiro recomendado</li>
+            <li>Até 10 fotos/produtos</li>
+            <li>2 divulgações mensais nas redes</li>
+            <li>Link exclusivo da página da loja</li>
+          </ul>
+          <button class="btn secondary openPayment" data-plan="Regional fundador - R$ 59,90 no primeiro mês / depois R$ 69,90/mês">Ativar plano</button>
+        </article>
+      </div>
+
+      <div class="plan-disclaimer">
+        <strong>Transparência:</strong> o TE QUERO BEM não garante vendas. O plano garante presença na vitrine digital, página da loja, botão WhatsApp e divulgação orgânica nas redes do projeto, conforme o plano contratado.
+      </div>
+
+      <div class="payment-box" id="paymentBox" hidden>
+        <button class="close-payment" id="closePayment" type="button" aria-label="Fechar">×</button>
+        <p class="eyebrow dark">Pagamento da mensalidade</p>
+        <h3 id="paymentTitle">Plano selecionado</h3>
+        <p>Modelo recomendado: Pix mensal, link de pagamento ou assinatura automatizada por Asaas/Mercado Pago. A loja só aparece como ativa após a mensalidade confirmada.</p>
+        <div class="pix-demo">
+          <code id="pixCode">PIX-DEMO-TE-QUERO-BEM-MENSALIDADE</code>
+          <button class="btn tiny" id="copyPix" type="button">Copiar Pix demonstrativo</button>
+        </div>
+        <a class="btn primary full" id="paymentWhats" href="https://wa.me/5585997120397?text=Ol%C3%A1%2C%20quero%20ativar%20um%20plano%20de%20lojista%20no%20TE%20QUERO%20BEM." target="_blank" rel="noopener">Falar com Carlos para ativar</a>
+        <small>Este site demonstrativo não processa pagamentos reais. Na publicação oficial, use gateway com confirmação automática.</small>
+      </div>
+    </section>
+
+    <section class="section terms">
+      <div class="terms-card">
+        <p class="eyebrow dark">Aviso de responsabilidade</p>
+        <h2>Regra clara para proteger a plataforma</h2>
+        <p>O TE QUERO BEM funciona como vitrine digital de lojistas parceiros. A compra, pagamento, entrega, garantia, qualidade do produto e atendimento são combinados diretamente entre cliente e loja.</p>
+      </div>
+    </section>
+  </main>
+
+  <section class="store-modal" id="storeModal" hidden>
+    <div class="store-modal-page" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-store-modal" id="closeStoreModal" type="button" aria-label="Fechar página da loja">×</button>
+      <div class="store-modal-hero">
+        <img id="modalHeroImage" src="assets/nicho-flores-cestas.png" alt="Imagem da loja" />
+        <div class="store-modal-copy">
+          <p class="eyebrow">Prévia da página da loja</p>
+          <h2 id="modalTitle">Nome da loja</h2>
+          <p id="modalLocation">Cidade/Estado • Categoria</p>
+          <div class="store-preview-note">
+            Esta é a página que o cliente verá ao clicar na loja. O lojista poderá enviar fotos, descrição, produtos, diferenciais e WhatsApp. Tudo fica pendente até sua aprovação.
+          </div>
+        </div>
+      </div>
+      <div class="store-modal-content">
+        <div>
+          <p class="eyebrow dark">Sobre a loja</p>
+          <p id="modalDescription"></p>
+          <p class="eyebrow dark">Produtos e serviços</p>
+          <p id="modalProducts"></p>
+          <a class="btn primary" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Chamar loja no WhatsApp</a>
+        </div>
+        <div>
+          <p class="eyebrow dark">Galeria da loja</p>
+          <div class="store-modal-gallery" id="modalGallery"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="assets/logo-te-quero-bem.svg" alt="Logo TE QUERO BEM" />
+    <div>
+      <strong>TE QUERO BEM</strong>
+      <p>Carinho entregue em todas as cidades do Brasil.</p>
+    </div>
+    <a class="btn footer-whats" href="https://wa.me/5585997120397?text=Quero%20saber%20mais%20sobre%20o%20TE%20QUERO%20BEM" target="_blank" rel="noopener">Contato WhatsApp</a>
+    <a class="btn footer-whats" href="admin.html">Painel admin</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

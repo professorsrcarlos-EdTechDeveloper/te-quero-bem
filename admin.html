@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin | TE QUERO BEM</title>
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="panel-body">
+  <header class="panel-hero">
+    <a class="brand-mini" href="index.html">
+      <img src="assets/logo-te-quero-bem.svg" alt="Logo TE QUERO BEM" />
+      <span>TE QUERO BEM</span>
+    </a>
+    <div>
+      <p class="eyebrow">Painel administrativo</p>
+      <h1>Aprovar lojas e controlar a vitrine</h1>
+      <p>Somente cadastros aprovados aparecem no site público.</p>
+    </div>
+    <a class="btn secondary" href="index.html">Voltar ao site</a>
+  </header>
+
+  <main class="panel-main">
+    <section class="panel-card" id="loginPanel">
+      <p class="eyebrow dark">Acesso</p>
+      <h2>Entrar como administrador</h2>
+      <p>Use o e-mail cadastrado na tabela <strong>admin_users</strong> do Supabase. Você receberá um link mágico para entrar.</p>
+      <form class="seller-form wide" id="adminLoginForm">
+        <label>E-mail admin<input id="adminEmail" type="email" required placeholder="seuemail@exemplo.com" /></label>
+        <button class="btn primary full" type="submit">Enviar link de acesso</button>
+      </form>
+      <div class="status-note" id="adminLoginStatus">Aguardando login.</div>
+    </section>
+
+    <section class="panel-card" id="adminPanel" hidden>
+      <div class="panel-title">
+        <div>
+          <p class="eyebrow dark">Fila de aprovação</p>
+          <h2>Lojistas cadastrados</h2>
+        </div>
+        <button class="btn secondary" id="adminLogout" type="button">Sair</button>
+      </div>
+      <div class="admin-filters">
+        <button class="btn tiny filterStatus" data-status="pendente" type="button">Pendentes</button>
+        <button class="btn tiny filterStatus" data-status="aprovado" type="button">Aprovados</button>
+        <button class="btn tiny filterStatus" data-status="recusado" type="button">Recusados</button>
+        <button class="btn tiny filterStatus" data-status="suspenso" type="button">Suspensos</button>
+        <button class="btn tiny filterStatus" data-status="todos" type="button">Todos</button>
+      </div>
+      <div class="store-list admin-list" id="adminStoreList"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

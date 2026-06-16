@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Lojista | TE QUERO BEM</title>
+  <meta name="description" content="Cadastre sua loja para aparecer na vitrine TE QUERO BEM após aprovação." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="panel-body">
+  <header class="panel-hero">
+    <a class="brand-mini" href="index.html">
+      <img src="assets/logo-te-quero-bem.svg" alt="Logo TE QUERO BEM" />
+      <span>TE QUERO BEM</span>
+    </a>
+    <div>
+      <p class="eyebrow">Cadastro autonomo</p>
+      <h1>Área do lojista fundador</h1>
+      <p>Envie seus textos, contatos e imagens. Sua loja fica pendente até a aprovação do administrador.</p>
+    </div>
+    <a class="btn secondary" href="index.html">Voltar ao site</a>
+  </header>
+
+  <main class="panel-main">
+    <section class="panel-card">
+      <p class="eyebrow dark">Status</p>
+      <h2>Como funciona</h2>
+      <div class="mini-steps">
+        <span>1. Você envia os dados</span>
+        <span>2. A loja fica pendente</span>
+        <span>3. Carlos aprova no painel</span>
+        <span>4. A loja aparece na vitrine</span>
+      </div>
+      <div class="status-note" id="supabaseStatus">Verificando conexao com Supabase...</div>
+    </section>
+
+    <section class="panel-card">
+      <p class="eyebrow dark">Dados da loja</p>
+      <h2>Solicitar entrada na vitrine</h2>
+      <form class="seller-form wide" id="autonomousSellerForm">
+        <div class="form-grid-2">
+          <label>Nome da loja<input id="nome_loja" type="text" required placeholder="Ex: Flor & Afeto" /></label>
+          <label>Responsável<input id="responsavel" type="text" required placeholder="Nome de quem atende" /></label>
+          <label>E-mail<input id="email" type="email" placeholder="email da loja" /></label>
+          <label>WhatsApp<input id="whatsapp" type="tel" required placeholder="85999999999" /></label>
+          <label>Cidade<input id="cidade" type="text" required placeholder="Beberibe" /></label>
+          <label>Estado<select id="estado" required><option>CE</option><option>SP</option><option>RJ</option><option>MG</option><option>BA</option><option>PE</option><option>PB</option><option>RN</option><option>GO</option><option>PR</option><option>SC</option><option>RS</option></select></label>
+          <label>Instagram<input id="instagram" type="text" placeholder="@sualoja" /></label>
+          <label>Categoria<select id="categoria" required><option>Flores e presentes</option><option>Chocolates</option><option>Cestas especiais</option><option>Bolos e doces</option><option>Papelaria criativa</option><option>Artesanato</option><option>Balões e surpresas</option><option>Outro</option></select></label>
+          <label>Faixa de preço<input id="faixa_preco" type="text" placeholder="Ex: R$ 40 a R$ 250" /></label>
+          <label>Plano desejado<select id="plano"><option>Básico fundador - R$ 19,90 no primeiro mês / depois R$ 29,90</option><option>Destaque fundador - R$ 39,90 no primeiro mês / depois R$ 49,90</option><option>Regional fundador - R$ 59,90 no primeiro mês / depois R$ 69,90</option></select></label>
+        </div>
+        <label>Descrição da loja<textarea id="descricao" rows="4" required placeholder="Conte o que sua loja vende e por que ela é uma boa escolha para presentear."></textarea></label>
+        <label>Produtos e serviços<textarea id="produtos" rows="4" required placeholder="Ex: buquês, cestas de café, chocolates, cartões, balões, bolos, combos personalizados."></textarea></label>
+        <label>Horário de atendimento<input id="horario" type="text" placeholder="Ex: seg a sáb, 8h às 18h" /></label>
+        <label>Entrega<input id="entrega" type="text" placeholder="Ex: entrega em Beberibe e cidades próximas" /></label>
+        <div class="form-grid-2">
+          <label>Logo da loja<input id="logoFile" type="file" accept="image/*" /></label>
+          <label>Imagem de capa/produtos<input id="capaFile" type="file" accept="image/*" /></label>
+          <label>Foto extra de produto 1<input id="foto1File" type="file" accept="image/*" /></label>
+          <label>Foto extra de produto 2<input id="foto2File" type="file" accept="image/*" /></label>
+        </div>
+        <button class="btn primary full" type="submit">Enviar para aprovação</button>
+        <a class="btn secondary full" href="https://wa.me/5585997120397?text=Ol%C3%A1%2C%20enviei%20meu%20cadastro%20de%20lojista%20no%20TE%20QUERO%20BEM%20e%20quero%20confirmar%20a%20ativa%C3%A7%C3%A3o." target="_blank" rel="noopener">Avisar Carlos no WhatsApp</a>
+      </form>
+      <div class="result-box" id="sellerResult" hidden></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="lojista.js"></script>
+</body>
+</html>

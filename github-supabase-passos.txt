@@ -1,0 +1,47 @@
+PASSO A PASSO - TE QUERO BEM COM SUPABASE E GITHUB PAGES
+
+1. CRIAR PROJETO NO SUPABASE
+- Entre no Supabase.
+- Crie um novo projeto.
+- Abra SQL Editor.
+- Cole e execute todo o arquivo supabase-schema.sql.
+
+2. CONFIGURAR ADMIN
+- No arquivo supabase-schema.sql, troque SEU_EMAIL_ADMIN_AQUI pelo seu e-mail.
+- Se ja executou antes, rode no SQL Editor:
+  insert into public.admin_users (email) values ('seuemail@exemplo.com') on conflict (email) do nothing;
+- Em Authentication > Users, crie ou confirme esse usuario.
+
+3. PEGAR CHAVES
+- No Supabase, va em Project Settings > API.
+- Copie Project URL.
+- Copie anon/public key.
+- Abra supabase-config.js.
+- Cole nos campos:
+  supabaseUrl
+  supabaseAnonKey
+
+4. PUBLICAR NO GITHUB PAGES
+- Envie todos os arquivos para um repositorio.
+- Ative GitHub Pages na branch principal.
+- O site publico sera index.html.
+- O cadastro dos lojistas sera lojista.html.
+- O painel de aprovacao sera admin.html.
+
+5. FLUXO DE USO
+- Lojista acessa lojista.html.
+- Envia dados, textos, logo e capa.
+- Cadastro entra como pendente no Supabase.
+- Voce acessa admin.html.
+- Entra com seu e-mail admin.
+- Aprova, recusa ou suspende.
+- O index.html mostra apenas lojistas aprovados.
+
+6. REGRA DE SEGURANCA
+- Nao coloque service_role key no site.
+- Use apenas anon/public key no supabase-config.js.
+- A autorizacao acontece pelas politicas RLS do arquivo SQL.
+
+7. OBSERVACAO PARA O LANCAMENTO
+- Ate 30/06, use lojista.html para captar lojas.
+- Em 01/07, divulgue index.html para o publico consumidor.
