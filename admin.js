@@ -4,6 +4,7 @@ const adminPanel = document.getElementById("adminPanel");
 const adminLoginForm = document.getElementById("adminLoginForm");
 const adminLoginStatus = document.getElementById("adminLoginStatus");
 const adminStoreList = document.getElementById("adminStoreList");
+const adminRedirectUrl = `${window.location.origin}${window.location.pathname}`;
 let currentStatus = "pendente";
 
 function setLoginStatus(message) {
@@ -138,7 +139,7 @@ adminLoginForm.addEventListener("submit", async event => {
   const { error } = await supabaseClient.auth.signInWithOtp({
     email,
     options: {
-      emailRedirectTo: window.location.href
+      emailRedirectTo: adminRedirectUrl
     }
   });
 

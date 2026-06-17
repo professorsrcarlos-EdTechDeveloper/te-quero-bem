@@ -54,3 +54,9 @@ Para transformar em sistema real:
 - Colar URL e anon key em supabase-config.js.
 - Publicar no GitHub Pages.
 - Integrar pagamento mensal com Asaas, Mercado Pago, PagBank ou Efi quando quiser automatizar cobranca.
+
+Configuração importante do login admin:
+- No Supabase, em Authentication > URL Configuration, use como Site URL:
+  https://professorsrcarlos-edtechdeveloper.github.io/te-quero-bem/
+- Em Redirect URLs, adicione:
+  https://professorsrcarlos-edtechdeveloper.github.io/te-quero-bem/admin.html

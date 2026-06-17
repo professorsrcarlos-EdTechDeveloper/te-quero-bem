@@ -27,9 +27,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 122, 89, 0.18), transparent 30%),
-    radial-gradient(circle at 88% 8%, rgba(20, 184, 166, 0.18), transparent 32%),
-    linear-gradient(180deg, #fff7ed 0%, #ecfeff 36%, #fdf2f8 70%, #fff7ed 100%);
+    radial-gradient(circle at 12% 18%, rgba(255, 122, 89, 0.25), transparent 30%),
+    radial-gradient(circle at 88% 8%, rgba(20, 184, 166, 0.24), transparent 32%),
+    linear-gradient(180deg, #fff7ed 0%, #e0f2fe 28%, #fae8ff 58%, #dcfce7 100%);
 }
 
 body.modal-open {
@@ -77,7 +77,7 @@ select {
   justify-content: space-between;
   gap: 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(204, 251, 241, 0.9), rgba(254, 243, 199, 0.88));
   backdrop-filter: blur(16px);
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
@@ -111,7 +111,7 @@ select {
 }
 
 .nav-links a:hover {
-  background: #fff3c4;
+  background: linear-gradient(135deg, #facc15, #ccfbf1);
   color: #111827;
 }
 
@@ -267,6 +267,43 @@ select {
   padding: 74px 0;
 }
 
+.categories,
+.plans,
+.terms {
+  width: 100%;
+  padding-left: max(16px, calc((100% - 1180px) / 2));
+  padding-right: max(16px, calc((100% - 1180px) / 2));
+}
+
+.categories {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(250, 204, 21, 0.32), transparent 26%),
+    radial-gradient(circle at 86% 8%, rgba(255, 79, 163, 0.22), transparent 30%),
+    linear-gradient(135deg, #ecfeff, #fff7ed 45%, #fae8ff);
+}
+
+.plans {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(20, 184, 166, 0.2), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(250, 204, 21, 0.22), transparent 30%),
+    linear-gradient(135deg, #0f172a 0%, #0f766e 42%, #7c3aed 100%);
+}
+
+.plans .section-head h2,
+.plans .section-head p {
+  color: #ffffff;
+}
+
+.plans .eyebrow.dark {
+  color: #fef3c7;
+}
+
+.terms {
+  background:
+    radial-gradient(circle at 25% 0%, rgba(34, 197, 94, 0.24), transparent 28%),
+    linear-gradient(135deg, #fef3c7, #ccfbf1, #fae8ff);
+}
+
 .section-head {
   max-width: 780px;
   margin: 0 auto 32px;
@@ -352,6 +389,22 @@ select {
   padding: 24px;
 }
 
+.step-card:nth-child(1) {
+  background: linear-gradient(135deg, #fff7ad, #ccfbf1);
+}
+
+.step-card:nth-child(2) {
+  background: linear-gradient(135deg, #dbeafe, #fce7f3);
+}
+
+.step-card:nth-child(3) {
+  background: linear-gradient(135deg, #dcfce7, #fef3c7);
+}
+
+.step-card:nth-child(4) {
+  background: linear-gradient(135deg, #ede9fe, #cffafe);
+}
+
 .step-card > *,
 .launch-card > *,
 .category-card > *,
@@ -365,9 +418,9 @@ select {
   padding-left: max(16px, calc((100% - 1180px) / 2));
   padding-right: max(16px, calc((100% - 1180px) / 2));
   background:
-    radial-gradient(circle at 14% 24%, rgba(255, 79, 163, 0.16), transparent 26%),
-    radial-gradient(circle at 86% 8%, rgba(20, 184, 166, 0.18), transparent 30%),
-    linear-gradient(135deg, #ffffff, #fff7ed 42%, #ecfeff);
+    radial-gradient(circle at 14% 24%, rgba(255, 79, 163, 0.28), transparent 26%),
+    radial-gradient(circle at 86% 8%, rgba(20, 184, 166, 0.28), transparent 30%),
+    linear-gradient(135deg, #fef3c7, #ccfbf1 42%, #fae8ff);
 }
 
 .launch-grid {
@@ -376,7 +429,9 @@ select {
 
 .launch-card {
   min-height: 210px;
-  background: rgba(255, 255, 255, 0.86);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(250, 204, 21, 0.24), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 254, 255, 0.9));
   display: grid;
   align-content: start;
 }
@@ -429,10 +484,17 @@ select {
 }
 
 .split {
+  width: 100%;
+  padding-left: max(16px, calc((100% - 1180px) / 2));
+  padding-right: max(16px, calc((100% - 1180px) / 2));
   display: grid;
   grid-template-columns: 0.86fr 1.14fr;
   gap: 22px;
   align-items: start;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 79, 163, 0.22), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(250, 204, 21, 0.28), transparent 30%),
+    linear-gradient(135deg, #ccfbf1 0%, #fef3c7 42%, #fce7f3 100%);
 }
 
 .panel,
@@ -446,15 +508,18 @@ select {
 
 .bright-panel {
   padding: 30px;
-  background: linear-gradient(135deg, #ffffff, #fff7ed 54%, #e0f2fe);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 79, 163, 0.28), transparent 28%),
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, 0.26), transparent 32%),
+    linear-gradient(135deg, #fef3c7, #ffffff 36%, #dbeafe 100%);
 }
 
 .store-panel {
   padding: 30px;
   background:
-    radial-gradient(circle at 10% 12%, rgba(250, 204, 21, 0.22), transparent 26%),
-    radial-gradient(circle at 92% 8%, rgba(255, 79, 163, 0.16), transparent 30%),
-    linear-gradient(135deg, #ffffff, #ecfeff 52%, #fff7ed);
+    radial-gradient(circle at 10% 12%, rgba(250, 204, 21, 0.34), transparent 26%),
+    radial-gradient(circle at 92% 8%, rgba(255, 79, 163, 0.24), transparent 30%),
+    linear-gradient(135deg, #ecfeff, #fff7ed 42%, #fae8ff);
 }
 
 .panel-title {
@@ -740,7 +805,9 @@ textarea {
   max-width: 900px;
   margin: 0 auto;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.94);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(250, 204, 21, 0.22), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(236, 254, 255, 0.94));
 }
 
 .assistant-progress {
@@ -871,7 +938,9 @@ textarea {
 
 .seller-form {
   padding: 28px;
-  background: #ffffff;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(255, 79, 163, 0.14), transparent 28%),
+    linear-gradient(135deg, #ffffff, #fef3c7 48%, #ccfbf1);
   color: var(--ink);
 }
 
@@ -895,8 +964,14 @@ textarea {
   gap: 14px;
   align-content: start;
   background:
-    radial-gradient(circle at 90% 10%, rgba(250, 204, 21, 0.18), transparent 28%),
-    linear-gradient(135deg, #ffffff, #ecfeff);
+    radial-gradient(circle at 90% 10%, rgba(250, 204, 21, 0.28), transparent 28%),
+    linear-gradient(135deg, #ffffff, #ccfbf1 58%, #fef3c7);
+}
+
+.plan-card:nth-child(3) {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(255, 79, 163, 0.24), transparent 28%),
+    linear-gradient(135deg, #ffffff, #fce7f3 50%, #dbeafe);
 }
 
 .plan-card.featured {
@@ -981,7 +1056,7 @@ textarea {
   margin: 24px auto 0;
   max-width: 780px;
   padding: 26px;
-  background: linear-gradient(135deg, #ffffff, #ecfeff);
+  background: linear-gradient(135deg, #fef3c7, #ffffff, #ccfbf1);
 }
 
 .close-payment {

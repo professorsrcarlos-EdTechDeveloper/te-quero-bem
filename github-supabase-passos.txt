@@ -21,6 +21,16 @@ PASSO A PASSO - TE QUERO BEM COM SUPABASE E GITHUB PAGES
   supabaseUrl
   supabaseAnonKey
 
+3.1 CONFIGURAR LINK DO E-MAIL DO ADMIN
+- No Supabase, va em Authentication.
+- Entre em URL Configuration.
+- Em Site URL, coloque:
+  https://professorsrcarlos-edtechdeveloper.github.io/te-quero-bem/
+- Em Redirect URLs, adicione:
+  https://professorsrcarlos-edtechdeveloper.github.io/te-quero-bem/admin.html
+- Salve.
+- Isso evita o problema do link recebido por e-mail abrir fora do painel admin.
+
 4. PUBLICAR NO GITHUB PAGES
 - Envie todos os arquivos para um repositorio.
 - Ative GitHub Pages na branch principal.
