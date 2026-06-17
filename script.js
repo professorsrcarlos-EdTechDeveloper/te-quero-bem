@@ -22,7 +22,7 @@ const nicheImages = {
   digitais: [
     "assets/db-enem-digital.png",
     "assets/gabarito-max-digital.png",
-    "assets/nicho-baloes-presentes.png"
+    "assets/presente-digital-educacao.png"
   ]
 };
 
@@ -151,6 +151,10 @@ function isDigitalStore(store) {
   );
 }
 
+function displayLocation(store) {
+  return isDigitalStore(store) ? "Atendimento nacional" : `${store.cidade}/${store.estado}`;
+}
+
 function updateLaunchCountdown() {
   const countdown = document.getElementById("daysToLaunch");
   if (!countdown) return;
@@ -219,7 +223,11 @@ function renderStores(items = currentStores, demoMode = false) {
     const storeId = getStoreId(store, index);
     const rawWhatsapp = onlyNumbers(store.whatsapp);
     const whatsapp = rawWhatsapp.startsWith("55") ? rawWhatsapp : `55${rawWhatsapp}`;
-    const message = encodeURIComponent(`Olá! Encontrei sua loja no TE QUERO BEM e quero enviar um presente em ${store.cidade}/${store.estado}.`);
+    const location = displayLocation(store);
+    const messageText = isDigitalStore(store)
+      ? `Olá! Encontrei ${store.nome_loja} no TE QUERO BEM e quero informações sobre presente digital.`
+      : `Olá! Encontrei sua loja no TE QUERO BEM e quero enviar um presente em ${store.cidade}/${store.estado}.`;
+    const message = encodeURIComponent(messageText);
     const image = store.capa_url || store.logo_url || nicheGallery(store)[0];
     return `
       <article class="store-card glow-card ${store.destaque ? "featured" : ""}" data-store-id="${escapeHtml(storeId)}" tabindex="0" role="button" aria-label="Abrir página da loja ${escapeHtml(store.nome_loja)}">
@@ -229,7 +237,7 @@ function renderStores(items = currentStores, demoMode = false) {
           <p>${escapeHtml(store.descricao || store.categoria)}</p>
           <p class="store-products">${escapeHtml(store.produtos || "")}</p>
           <div class="meta">
-            <span class="pill">${escapeHtml(store.cidade)}/${escapeHtml(store.estado)}</span>
+            <span class="pill">${escapeHtml(location)}</span>
             <span class="pill">${escapeHtml(store.categoria)}</span>
             ${isDigitalStore(store) ? "<span class=\"pill\">Atende todo o Brasil</span>" : ""}
             ${store.destaque ? "<span class=\"pill\">Loja em destaque</span>" : ""}
@@ -280,14 +288,18 @@ function openStorePage(storeId) {
   const heroImage = gallery[0] || "assets/nicho-flores-cestas.png";
   const rawWhatsapp = onlyNumbers(store.whatsapp);
   const whatsapp = rawWhatsapp.startsWith("55") ? rawWhatsapp : `55${rawWhatsapp}`;
-  const message = encodeURIComponent(`Olá! Vi a página da sua loja no TE QUERO BEM e quero informações sobre presentes.`);
+  const location = displayLocation(store);
+  const messageText = isDigitalStore(store)
+    ? `Olá! Vi ${store.nome_loja} no TE QUERO BEM e quero informações sobre presente digital.`
+    : `Olá! Vi a página da sua loja no TE QUERO BEM e quero informações sobre presentes.`;
+  const message = encodeURIComponent(messageText);
 
   modalHeroImage.src = heroImage;
   modalHeroImage.alt = `Página da loja ${store.nome_loja}`;
   modalTitle.textContent = store.nome_loja;
-  modalLocation.textContent = `${store.cidade}/${store.estado} • ${store.categoria}`;
-  modalDescription.textContent = store.descricao || "Esta área mostra como a apresentação da loja ficará para o cliente.";
-  modalProducts.textContent = store.produtos || "Produtos, serviços, diferenciais e condições de entrega aparecerão neste espaço.";
+  modalLocation.textContent = `${location} • ${store.categoria}`;
+  modalDescription.textContent = store.descricao || "Conheça as opções disponíveis e fale pelo WhatsApp para combinar detalhes, prazo e atendimento.";
+  modalProducts.textContent = store.produtos || "Produtos, serviços, diferenciais e condições de entrega.";
   modalWhatsapp.href = `https://wa.me/${whatsapp}?text=${message}`;
   modalGallery.innerHTML = gallery.map((image, index) => `
     <button class="gallery-item ${index === 0 ? "active" : ""}" type="button" data-image="${escapeHtml(image)}">

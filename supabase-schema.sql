@@ -188,13 +188,14 @@ set
   plano_status = 'isento',
   destaque = true,
   capa_url = 'assets/db-enem-digital.png',
-  foto_1_url = 'assets/gabarito-max-digital.png'
+  foto_1_url = 'assets/gabarito-max-digital.png',
+  foto_2_url = 'assets/presente-digital-educacao.png'
 where lower(nome_loja) = 'db enem';
 
 insert into public.lojistas (
   nome_loja, responsavel, email, cidade, estado, whatsapp, instagram, categoria,
   descricao, produtos, faixa_preco, horario, entrega, plano, status, plano_status,
-  destaque, capa_url, foto_1_url
+  destaque, capa_url, foto_1_url, foto_2_url
 )
 select
   'DB ENEM',
@@ -215,7 +216,8 @@ select
   'isento',
   true,
   'assets/db-enem-digital.png',
-  'assets/gabarito-max-digital.png'
+  'assets/gabarito-max-digital.png',
+  'assets/presente-digital-educacao.png'
 where not exists (
   select 1 from public.lojistas where lower(nome_loja) = 'db enem'
 );
@@ -238,13 +240,14 @@ set
   plano_status = 'isento',
   destaque = true,
   capa_url = 'assets/gabarito-max-digital.png',
-  foto_1_url = 'assets/db-enem-digital.png'
+  foto_1_url = 'assets/db-enem-digital.png',
+  foto_2_url = 'assets/presente-digital-educacao.png'
 where lower(nome_loja) = 'gabarito max';
 
 insert into public.lojistas (
   nome_loja, responsavel, email, cidade, estado, whatsapp, instagram, categoria,
   descricao, produtos, faixa_preco, horario, entrega, plano, status, plano_status,
-  destaque, capa_url, foto_1_url
+  destaque, capa_url, foto_1_url, foto_2_url
 )
 select
   'Gabarito Max',
@@ -265,7 +268,8 @@ select
   'isento',
   true,
   'assets/gabarito-max-digital.png',
-  'assets/db-enem-digital.png'
+  'assets/db-enem-digital.png',
+  'assets/presente-digital-educacao.png'
 where not exists (
   select 1 from public.lojistas where lower(nome_loja) = 'gabarito max'
 );
