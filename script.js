@@ -18,6 +18,11 @@ const nicheImages = {
     "assets/nicho-baloes-presentes.png",
     "assets/nicho-chocolates-bolos.png",
     "assets/nicho-flores-cestas.png"
+  ],
+  digitais: [
+    "assets/db-enem-digital.png",
+    "assets/gabarito-max-digital.png",
+    "assets/nicho-baloes-presentes.png"
   ]
 };
 
@@ -136,6 +141,16 @@ function getStoreId(store, index) {
   return store.id || `${normalizeText(store.nome_loja)}-${normalizeText(store.cidade)}-${index}`;
 }
 
+function isDigitalStore(store) {
+  const joined = normalizeText(`${store.cidade} ${store.estado} ${store.categoria} ${store.entrega} ${store.descricao} ${store.produtos}`);
+  return (
+    joined.includes("digital") ||
+    joined.includes("online") ||
+    joined.includes("brasil") ||
+    store.estado === "BR"
+  );
+}
+
 function updateLaunchCountdown() {
   const countdown = document.getElementById("daysToLaunch");
   if (!countdown) return;
@@ -180,6 +195,7 @@ function nicheGallery(store) {
   if (joined.includes("chocolate") || joined.includes("bolo") || joined.includes("doce")) fallback = nicheImages.doces;
   if (joined.includes("cafe") || joined.includes("cesta")) fallback = nicheImages.cestas;
   if (joined.includes("balao") || joined.includes("surpresa") || joined.includes("personalizado")) fallback = nicheImages.surpresas;
+  if (isDigitalStore(store) || joined.includes("enem") || joined.includes("estudo") || joined.includes("educacao") || joined.includes("simulado")) fallback = nicheImages.digitais;
   return [...new Set([...uploadedGallery, ...fallback])];
 }
 
@@ -215,6 +231,7 @@ function renderStores(items = currentStores, demoMode = false) {
           <div class="meta">
             <span class="pill">${escapeHtml(store.cidade)}/${escapeHtml(store.estado)}</span>
             <span class="pill">${escapeHtml(store.categoria)}</span>
+            ${isDigitalStore(store) ? "<span class=\"pill\">Atende todo o Brasil</span>" : ""}
             ${store.destaque ? "<span class=\"pill\">Loja em destaque</span>" : ""}
             ${demoMode ? "<span class=\"pill\">Exemplo visual</span>" : ""}
           </div>
@@ -301,13 +318,18 @@ giftForm.addEventListener("submit", event => {
   const cityInput = document.getElementById("cidadeDestino").value.trim();
   const city = normalizeText(cityInput);
   const state = document.getElementById("estadoDestino").value;
-  const filtered = currentStores.filter(store =>
-    normalizeText(store.cidade).includes(city) && (!state || store.estado === state)
-  );
+  const filtered = currentStores.filter(store => {
+    const digital = isDigitalStore(store);
+    const cityMatches = city ? normalizeText(store.cidade).includes(city) : true;
+    const stateMatches = state ? store.estado === state : true;
+    return digital || (cityMatches && stateMatches);
+  });
   renderStores(filtered, !supabaseClient);
   const place = `${cityInput || "todas as cidades"}${state ? `/${state}` : ""}`;
-  const totalText = filtered.length === 1 ? "1 loja encontrada" : `${filtered.length} lojas encontradas`;
-  updateSearchFeedback(`Resultado da busca para ${place}: ${totalText}.`, filtered.length ? "success" : "empty");
+  const digitalTotal = filtered.filter(isDigitalStore).length;
+  const totalText = filtered.length === 1 ? "1 opção encontrada" : `${filtered.length} opções encontradas`;
+  const digitalText = digitalTotal ? ` Inclui ${digitalTotal} serviço(s) digital(is) com atendimento nacional.` : "";
+  updateSearchFeedback(`Resultado da busca para ${place}: ${totalText}.${digitalText}`, filtered.length ? "success" : "empty");
   if (storeList) storeList.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 

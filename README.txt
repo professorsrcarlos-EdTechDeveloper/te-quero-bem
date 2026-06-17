@@ -17,6 +17,7 @@ Arquivos:
 - admin.js
 - supabase-config.js
 - supabase-schema.sql
+- supabase-lojas-digitais.sql
 - github-supabase-passos.txt
 - plano-divulgacao-lojistas.txt
 - assets/logo-te-quero-bem.svg
