@@ -4,8 +4,8 @@
 // 3. Cole abaixo a Project URL e a anon/public key do seu projeto.
 
 window.TQB_CONFIG = {
-  supabaseUrl: "COLE_AQUI_SUA_SUPABASE_URL",
-  supabaseAnonKey: "COLE_AQUI_SUA_SUPABASE_ANON_KEY",
+  supabaseUrl: "https://okedliwiznczbrskhvur.supabase.co",
+  supabaseAnonKey: "sb_publishable_-H_z99rkFhpk5QasriEpWQ_-fpnVaJv",
   storageBucket: "loja-imagens",
   ownerWhatsapp: "5585997120397",
   launchDate: "2026-07-01T00:00:00-03:00"
