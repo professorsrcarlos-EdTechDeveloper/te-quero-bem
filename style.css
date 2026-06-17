@@ -464,6 +464,37 @@ select {
   gap: 14px;
 }
 
+.search-feedback {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: #102033;
+  background: linear-gradient(135deg, #fef3c7, #ffffff, #ccfbf1);
+  border: 1px solid rgba(20, 184, 166, 0.22);
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.search-feedback[data-type="success"] {
+  background: linear-gradient(135deg, #dcfce7, #ccfbf1, #ffffff);
+  border-color: rgba(34, 197, 94, 0.38);
+}
+
+.search-feedback[data-type="empty"] {
+  background: linear-gradient(135deg, #fee2e2, #fff7ed, #ffffff);
+  border-color: rgba(248, 113, 113, 0.38);
+}
+
+.pulse-feedback {
+  animation: pulseFeedback 0.72s ease;
+}
+
+@keyframes pulseFeedback {
+  0% { transform: scale(1); box-shadow: none; }
+  45% { transform: scale(1.02); box-shadow: 0 18px 34px rgba(20, 184, 166, 0.22); }
+  100% { transform: scale(1); box-shadow: none; }
+}
+
 .gift-form,
 .seller-form {
   display: grid;

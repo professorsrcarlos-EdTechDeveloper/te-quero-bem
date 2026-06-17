@@ -100,6 +100,7 @@ const storeList = document.getElementById("storeList");
 const giftForm = document.getElementById("giftForm");
 const mostrarTodas = document.getElementById("mostrarTodas");
 const sellerForm = document.getElementById("sellerForm");
+const searchFeedback = document.getElementById("searchFeedback");
 const storeModal = document.getElementById("storeModal");
 const modalHeroImage = document.getElementById("modalHeroImage");
 const modalTitle = document.getElementById("modalTitle");
@@ -241,6 +242,15 @@ function renderStores(items = currentStores, demoMode = false) {
   });
 }
 
+function updateSearchFeedback(message, type = "default") {
+  if (!searchFeedback) return;
+  searchFeedback.textContent = message;
+  searchFeedback.dataset.type = type;
+  searchFeedback.classList.remove("pulse-feedback");
+  void searchFeedback.offsetWidth;
+  searchFeedback.classList.add("pulse-feedback");
+}
+
 function findStoreById(storeId) {
   return currentStores.find((store, index) => getStoreId(store, index) === storeId);
 }
@@ -288,15 +298,23 @@ function closeModal() {
 
 giftForm.addEventListener("submit", event => {
   event.preventDefault();
-  const city = normalizeText(document.getElementById("cidadeDestino").value);
+  const cityInput = document.getElementById("cidadeDestino").value.trim();
+  const city = normalizeText(cityInput);
   const state = document.getElementById("estadoDestino").value;
   const filtered = currentStores.filter(store =>
     normalizeText(store.cidade).includes(city) && (!state || store.estado === state)
   );
   renderStores(filtered, !supabaseClient);
+  const place = `${cityInput || "todas as cidades"}${state ? `/${state}` : ""}`;
+  const totalText = filtered.length === 1 ? "1 loja encontrada" : `${filtered.length} lojas encontradas`;
+  updateSearchFeedback(`Resultado da busca para ${place}: ${totalText}.`, filtered.length ? "success" : "empty");
+  if (storeList) storeList.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-mostrarTodas.addEventListener("click", () => renderStores(currentStores, !supabaseClient));
+mostrarTodas.addEventListener("click", () => {
+  renderStores(currentStores, !supabaseClient);
+  updateSearchFeedback(`Vitrine completa: ${currentStores.length} loja(s) aprovada(s).`, "default");
+});
 
 sellerForm.addEventListener("submit", event => {
   event.preventDefault();
